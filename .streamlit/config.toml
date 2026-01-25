@@ -1,0 +1,12 @@
+[client]
+# Hide the toolbar (Fork button, GitHub icon)
+toolbarMode = "minimal"
+
+[browser]
+# Optional: Set the app to use the full width
+gatherUsageStats = false
+
+[server]
+# Optional: Disable CORS warnings
+enableCORS = false
+enableXsrfProtection = true
