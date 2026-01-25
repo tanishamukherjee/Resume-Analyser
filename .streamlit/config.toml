@@ -1,6 +1,12 @@
 [client]
-# Hide the toolbar (Fork button, GitHub icon)
-toolbarMode = "minimal"
+# Hide the toolbar completely
+toolbarMode = "viewer"
+showErrorDetails = false
+
+[ui]
+# Hide menu and footer
+hideTopBar = true
+hideSidebarNav = false
 
 [browser]
 # Optional: Set the app to use the full width
