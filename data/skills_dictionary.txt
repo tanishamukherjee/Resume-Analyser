@@ -1,0 +1,89 @@
+# Common technical skills dictionary
+# Add domain-specific skills as needed
+
+# Programming Languages
+python
+java
+javascript
+typescript
+c++
+c#
+golang
+ruby
+php
+swift
+kotlin
+rust
+scala
+r
+
+# Web Technologies
+html
+css
+react
+angular
+vue
+node.js
+express
+django
+flask
+fastapi
+spring boot
+asp.net
+jquery
+
+# Databases
+sql
+mysql
+postgresql
+mongodb
+redis
+cassandra
+oracle
+sql server
+dynamodb
+elasticsearch
+
+# Cloud & DevOps
+aws
+azure
+gcp
+docker
+kubernetes
+jenkins
+gitlab ci
+github actions
+terraform
+ansible
+ci/cd
+
+# Data Science & ML
+machine learning
+deep learning
+tensorflow
+pytorch
+keras
+scikit-learn
+pandas
+numpy
+data analysis
+data visualization
+nlp
+computer vision
+opencv
+
+# Other Technical
+git
+rest api
+graphql
+microservices
+agile
+scrum
+linux
+bash
+powershell
+api development
+testing
+unit testing
+selenium
+jira
