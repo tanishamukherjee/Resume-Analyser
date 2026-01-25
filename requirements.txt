@@ -33,13 +33,13 @@ seaborn>=0.11.0
 torch>=2.0.0
 
 # API Framework (Phase 3: REST API Layer)
-fastapi==0.109.0
-uvicorn[standard]==0.27.0
-pydantic==2.5.3
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+pydantic>=2.10.0
 
 # Authentication & Security (Phase 3)
-PyJWT==2.8.0
-python-multipart==0.0.6
+PyJWT>=2.8.0
+python-multipart>=0.0.6
 
 # Background Tasks (Phase 3 - Optional but recommended for production)
 celery==5.3.6
