@@ -1137,7 +1137,8 @@ def reverse_match_tab(recommender):
             )
             
             # Display results
-            st.success(f"✅ Matched to {len(result.role_matches)} roles!")
+            all_matches = [result.primary_match] + result.alternate_matches
+            st.success(f"✅ Matched to {len(all_matches)} roles!")
             
             # Metrics
             col1, col2, col3 = st.columns(3)
@@ -1151,22 +1152,21 @@ def reverse_match_tab(recommender):
                 st.caption("Versatility across roles")
             
             with col3:
-                st.metric("Viable Roles", len([m for m in result.role_matches if m.match_score >= 0.6]))
+                st.metric("Viable Roles", result.total_viable_roles)
                 st.caption("Roles with 60%+ match")
             
             # Role matches
             st.markdown("---")
             st.subheader("🎯 Role Matches")
             
-            for i, match in enumerate(result.role_matches, 1):
+            for i, match in enumerate(all_matches, 1):
                 medal = "🥇" if i == 1 else "🥈" if i == 2 else "🥉" if i == 3 else f"#{i}"
                 
                 with st.expander(f"{medal} {match.role_name} - {match.match_score:.0%} match", expanded=(i <= 3)):
                     # Match details
                     st.markdown(f"**Career Level:** {match.career_level}")
                     st.markdown(f"**Match Score:** {match.match_score:.0%}")
-                    st.markdown(f"**Required Skills Match:** {match.required_skills_match:.0%}")
-                    st.markdown(f"**Optional Skills Match:** {match.optional_skills_match:.0%}")
+                    st.markdown(f"**Description:** {match.role_description}")
                     
                     # Matching skills
                     if match.matching_skills:
@@ -1174,21 +1174,24 @@ def reverse_match_tab(recommender):
                         st.markdown(" • ".join([f"`{s}`" for s in match.matching_skills]))
                     
                     # Missing skills
-                    if match.missing_required_skills:
-                        st.markdown("**⚠️ Missing Required Skills:**")
-                        st.markdown(" • ".join([f"`{s}`" for s in match.missing_required_skills]))
+                    if match.missing_skills:
+                        st.markdown("**⚠️ Missing Skills:**")
+                        st.markdown(" • ".join([f"`{s}`" for s in match.missing_skills]))
                     
                     # Learnable skills
                     if match.learnable_skills:
-                        st.markdown("**📚 Could Learn (Optional Skills):**")
+                        st.markdown("**📚 Could Learn:**")
                         st.markdown(" • ".join([f"`{s}`" for s in match.learnable_skills]))
+                    
+                    # Recommendation
+                    st.markdown(f"**💡 Recommendation:** {match.recommendation}")
             
             # Career paths
-            if result.suggested_career_paths:
+            if result.career_path_suggestions:
                 st.markdown("---")
                 st.subheader("🚀 Suggested Career Paths")
                 
-                for path in result.suggested_career_paths:
+                for path in result.career_path_suggestions:
                     st.markdown(f"- {path}")
 
 
