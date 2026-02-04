@@ -1674,7 +1674,6 @@ Ensure your usage complies with:
 
 ---
 
-**Built with ❤️ by Sasta Rogers | Powered by BERT, FastAPI, Firebase**
 
 *"Stop losing great candidates to keyword filters. Start finding talent that can actually do the job."*
 
